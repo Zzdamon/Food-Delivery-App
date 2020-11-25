@@ -32,6 +32,7 @@ class Restaurant{
                     <br>
                     <span>${this.priceRange}</span>
                     <div id=${this.name}></div>
+                    <button onclick="displayMenu">See menu</button>
                 </div>
             </li>
             `
