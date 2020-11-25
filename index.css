@@ -1,0 +1,61 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#topdiv
+{
+    height: 65px;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-color:rgb(146, 174, 69) ;
+    margin: auto;
+}
+
+#topdiv p
+{
+    padding-top: 10px; 
+    /* vertical-align: middle; */
+    /* margin-top: 5px; */
+    /* height: inherit; */
+}
+
+.restaurant {
+    background-color: bisque;
+    display: flex;
+    border: 1px solid pink;
+}
+
+#topimagediv img
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.profilediv
+{
+    width: 200px;
+}
+
+.profile
+{
+    width: 100%;
+}
+
+.icon
+{
+    max-width: 20px;
+}
+
+.restaurant *
+{
+    margin: 0px;
+}
+
+.restaurant p
+{
+}

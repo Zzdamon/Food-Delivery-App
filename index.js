@@ -2,8 +2,18 @@
 window.APP = {};
 // index.js fiind primul fisier care se incarca, mainPage va fi available in toate celelalte fisiere
 window.mainPage = document.querySelector('#root');
-window.mainPage.innerHTML+=`<div class="header"></div>
-<div class="container"></div>`;
+window.mainPage.innerHTML += `
+    <header>
+        <div id="topdiv">
+            <p>yEAT</p>
+        </div>
+        <div id="topimagediv">
+            <img src="foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
+`;
 
 APP.restaurants=[
     {

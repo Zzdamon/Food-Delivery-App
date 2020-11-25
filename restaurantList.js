@@ -1,4 +1,4 @@
-const restaurantList= document.querySelector('.container');
+const restaurantList= document.getElementsByTagName('main')[0];
 restaurantList.innerHTML += `
 
 	<ul id="restaurant-list">

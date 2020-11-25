@@ -15,18 +15,25 @@ class Restaurant{
             const restaurantList=document.querySelector('#restaurant-list')
             restaurantList.innerHTML+=`
             <li class = 'restaurant'>
-            <img src= ${this.image} alt="Restaurant logo" id="logo">
-            <h2>${this.name}</h2>
-            <p>${this.description}<p>
-            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png'>
-            <p>${this.deliveryTime}</p>
-            <img src='https://i.pinimg.com/originals/5c/44/92/5c44929ceecbafc93b5bf1320aeb574f.png'>
-            <p>${this.deliveryPrice}</p>
-            <img src='https://simpleicon.com/wp-content/uploads/basket.png'>
-            <p>Min. ${this.minPrice}</p>
-            <p>${this.priceRange}</p>
-            <div id=${this.name}></div>
-
+                <div class = "profilediv">
+                    <img class="profile" src= ${this.image} alt="Restaurant logo" id="logo">
+                </div>
+                <div>
+                    <h2>${this.name}</h2>
+                    <p>${this.description}<p>
+                    <img class="icon" src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png'>
+                    <span>${this.deliveryTime}</span>
+                    <br>
+                    <img class="icon" src='https://i.pinimg.com/originals/5c/44/92/5c44929ceecbafc93b5bf1320aeb574f.png'>
+                    <span>${this.deliveryPrice} lei</span>
+                    <br>
+                    <img class="icon" src='https://simpleicon.com/wp-content/uploads/basket.png'>
+                    <span>Min. ${this.minPrice} lei</span>
+                    <br>
+                    <span>${this.priceRange}</span>
+                    <div id=${this.name}></div>
+                </div>
+            </li>
             `
         }
 
