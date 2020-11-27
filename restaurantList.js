@@ -13,10 +13,12 @@ APP.renderRestaurantList = (restaurantArray) => {
 	// pentru fiecare element din vectorul primit ca parametru
 	restaurantArray.forEach( (elem) => {
 		// cream un produs
-		movie = new Restaurant(elem.name,
+		rest = new Restaurant(elem.name,
             elem.image,elem.minPrice, elem.deliveryPrice,elem.description, 
-            elem.priceRange,elem.deliveryTime,elem.menu);
+            elem.priceRange,elem.deliveryTime,elem.menu,elem.id);
 		// il afisam in pagina web
-		movie.renderRestaurant();
+		rest.renderRestaurant();
 	});
+
+
 }
