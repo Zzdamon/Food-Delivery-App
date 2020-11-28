@@ -179,3 +179,5 @@ ctx.font = "55px Arial";
 ctx.fillText("yEAT", 10, 50);
 ctx.textAlign="center";
 ctx.textBaseline="middle";
+
+document.getElementById("christmas").play();
