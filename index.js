@@ -5,7 +5,8 @@ window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
     <header>
         <div id="topdiv">
-            <p>yEAT</p>
+            <canvas id="titleCanvas">yEAT</canvas>
+            
         </div>
         <div id="topimagediv">
             <img src="foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
@@ -171,3 +172,10 @@ function startRendering() {
 // DUPA ce s-au incarcat TOATE scripturile, apelam functia startRendering
 // facem asta pentru ca la momentul incarcarii lui index.js, nu stim cine renderProductList()
 window.addEventListener('load', startRendering);
+
+var c = document.getElementById("titleCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "55px Arial";
+ctx.fillText("yEAT", 10, 50);
+ctx.textAlign="center";
+ctx.textBaseline="middle";

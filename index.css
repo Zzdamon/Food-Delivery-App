@@ -17,7 +17,7 @@
 
 #topdiv p
 {
-    padding-top: 10px; 
+    /*padding-top: 10px; 
     /* vertical-align: middle; */
     /* margin-top: 5px; */
     /* height: inherit; */
@@ -60,4 +60,13 @@
 button
 {
     background-color:rgb(182, 210, 164);
+}
+
+#titleCanvas
+{
+    /* height: inherit; */
+    align-items: center;
+    /* position: relative; */
+    top: 20px;
+    
 }

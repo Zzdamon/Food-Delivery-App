@@ -22,9 +22,15 @@ class Restaurant{
             //     restaurant:this.id,
             //     menu:{}
             // })
+            // restaurant.innerHTML += `
+            //         <table>
+            //             <tbody>
+            //     `;
             let i =0;
             Object.keys(this.menu).forEach((item)=>{
                 
+                
+
                 restaurant.innerHTML+=`
                 <h2>${item}</h2>
                 `;
@@ -49,7 +55,10 @@ class Restaurant{
                 })
             });
             restaurant.innerHTML+=`<button name="order${this.name}" type="submit">Order</button>`;
-
+            // restaurant.innerHTML += `
+            //         </tbody>
+            //     </table>   
+            //     `;
         }
         // addFormFunctionality() {
         
