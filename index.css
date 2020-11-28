@@ -46,12 +46,13 @@
 .restaurant *
 {
     margin: 0px;
+    transition: background 0.2s linear;
 }
 
 
 button
 {
-    background-color:rgb(182, 210, 164);
+    background-color:rgb(197, 202, 194);
 }
 
 #titleCanvas
@@ -60,13 +61,34 @@ button
     align-items: center;
     /* position: relative; */
     top: 20px;
+    
+    animation: animated_div 3s 1;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: animated_div;
+    border-radius: 5px;
+}
+
+@keyframes animated_div
+{
+0% {transform: rotate(0deg);left:0px;}
+25% {transform: rotate(20deg);left:0px;}
+/* 50% {transform: rotate(0deg);left:500px;} */
+/* 55% {transform: rotate(0deg);left:500px;}
+70% {transform: rotate(0deg);left:500px;} */
+100% {transform: rotate(-360deg);left:0px;}
 }
 
 #christmas
 {
     background-color: red;
     animation-name: example;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 
 #foodvideo
@@ -74,7 +96,20 @@ button
     float: left;
 }
 
-@keyframes example {
-    from {color: red;}
-    to {color: yellow;}
-  }
+@keyframes example 
+{
+    from 
+    {
+        background-color: red;
+    }
+    to 
+    {
+        background-color: yellow;
+    }
+}
+
+.restaurant:hover
+{
+    background-color: rgb(217, 219, 216);
+    transition: background 0.2s linear;
+}
