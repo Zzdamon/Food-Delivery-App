@@ -86,7 +86,7 @@ button
 
 #christmas
 {
-    background-color: red;
+    background-color: black;
     animation-name: example;
     animation-duration: 2s;
 }
@@ -100,11 +100,11 @@ button
 {
     from 
     {
-        background-color: red;
+        background-color: black;
     }
     to 
     {
-        background-color: yellow;
+        background-color: blueviolet;
     }
 }
 
@@ -112,4 +112,8 @@ button
 {
     background-color: rgb(217, 219, 216);
     transition: background 0.2s linear;
+}
+
+audio{
+    background-color: blue;
 }

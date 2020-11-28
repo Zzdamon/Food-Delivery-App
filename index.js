@@ -5,8 +5,9 @@ window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
     <header>
         <div id="topdiv">
+            <img style="float:left; max-height:65px;" src="stars.png" alt>
+            <img style="float:right;max-height:65px;" src="stars.png" alt>
             <canvas id="titleCanvas">yEAT</canvas>
-            
         </div>
         <div id="topimagediv">
             <img src="foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
@@ -42,7 +43,7 @@ APP.restaurants=[
                 price:25
             },
             {
-                name:'Pizza Cuattro Stagioni',
+                name:'Pizza Quattro Stagioni',
                 price:28
             }
         ],
@@ -136,7 +137,7 @@ APP.restaurants=[
                 price:17.9
             },
             {
-                name:'McNuggets Meni',
+                name:'McNuggets Menu',
                 price: 27.9
             }
         ]
