@@ -123,7 +123,7 @@ APP.restaurants=[
         ],
             premium:[
             {
-                name:'Crispy Chicked McWrap Menu',
+                name:'Crispy Chicken McWrap Menu',
                 price:21
             },
             {
@@ -182,3 +182,14 @@ ctx.textAlign="center";
 ctx.textBaseline="middle";
 
 document.getElementById("christmas").play();
+// Create a raster item using the image tag with id='mona'
+var raster = new Raster('pasta');
+
+// Move the raster to the center of the view
+raster.position = view.center;
+
+// Scale the raster by 50%
+raster.scale(0.5);
+
+// Rotate the raster by 45 degrees:
+raster.rotate(90);

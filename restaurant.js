@@ -94,7 +94,7 @@ class Restaurant{
                     
                 </div>
                
-                <form id=${idC}>
+                <form class="theforms" id=${idC}>
                 </form>
             </li>
             `
