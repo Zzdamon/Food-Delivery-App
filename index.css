@@ -15,14 +15,6 @@
     margin: auto;
 }
 
-#topdiv p
-{
-    /*padding-top: 10px; 
-    /* vertical-align: middle; */
-    /* margin-top: 5px; */
-    /* height: inherit; */
-}
-
 .restaurant {
     background-color: bisque;
     display: flex;
@@ -68,5 +60,4 @@ button
     align-items: center;
     /* position: relative; */
     top: 20px;
-    
 }
