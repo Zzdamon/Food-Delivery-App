@@ -39,7 +39,7 @@ class Restaurant{
                 this.menu[item].forEach((item)=>{
                     let itemName=this.id+ "prodName"+i;    
                     let itemNameName =item.name.replace(/\s/g, '');
-                    itemNameName=item.name.replace("'","");
+                    itemNameName=itemNameName.replace("'","");
                     let noProducts=this.id+"noProd"+i;
                     // let itemName= item.name.replace(/\s/g, '/');
 

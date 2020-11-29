@@ -5,12 +5,12 @@ window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
     <header>
         <div id="topdiv">
-            <img style="float:left; max-height:65px;" src="stars.png" alt>
-            <img style="float:right;max-height:65px;" src="stars.png" alt>
+            <img style="float:left; max-height:65px;" src="media/stars.png" alt>
+            <img style="float:right;max-height:65px;" src="media/stars.png" alt>
             <canvas id="titleCanvas">yEAT</canvas>
         </div>
         <div id="topimagediv">
-            <img src="foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
+            <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
         </div>
     </header>
     <main></main>
@@ -19,7 +19,7 @@ window.mainPage.innerHTML += `
 
 APP.restaurants=[
     {   id:"dominos",
-        image:'dominos.png',
+        image:'media/dominos.png',
         name:"Domino's Pizza",
         minPrice:40,
         deliveryPrice:5,
@@ -61,7 +61,7 @@ APP.restaurants=[
     },
 
     {   id: "kfc",
-        image:'kfc.jpg',
+        image:'media/kfc.jpg',
         name:"KFC",
         minPrice:30,
         deliveryPrice:9,
@@ -103,7 +103,7 @@ APP.restaurants=[
     },
 
     {   id: "mcDonalds",
-        image:'mcdonalds.png',
+        image:'media/mcdonalds.png',
         name:"McDonald's",
         minPrice:25,
         deliveryPrice:0,
