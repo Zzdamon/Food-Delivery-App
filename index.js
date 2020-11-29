@@ -6,22 +6,9 @@ products:[]};
 // index.js fiind primul fisier care se incarca, mainPage va fi available in toate celelalte fisiere
 window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
-    <header>
-        <div id="topdiv">
-            <canvas id="titleCanvas">yEAT</canvas>
-            <img id="cart" src="https://static.thenounproject.com/png/5641-200.png" alt="shopping cart" onclick=renderCart()>
-
-        </div>
-        <div id="topimagediv">
-            <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
-        </div>
-    </header>
+    
     <main></main>
-    <footer>
-    <img style="float:left; max-height:65px;" src="media/stars.png" alt>
-    <img style="float:right;max-height:65px;" src="media/stars.png" alt>
 
-    </footer>
     
 `;
 
@@ -29,33 +16,31 @@ function renderCart(){
     if(APP.cart.products.length>=1){
 
     mainPage.innerHTML=` <header>
-    <div id="topdiv">
-        <h1>yEAT</h1>
-
-    </div>
+    
     <div id="topimagediv">
-        <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
     </div>
 </header>`;
 
         mainPage.innerHTML+=`<div id="order">
         <h2>Order Details:</h2>
-        <p>restaurant: ${APP.cart.restaurant.name}</p>
-        <p>products:</p>
+        <p>Restaurant: ${APP.cart.restaurant.name}</p>
+        <p>Product(s):</p>
         </div>
         `
         const order=document.querySelector("#order");
         let total=0;
         APP.cart.products.forEach((item)=>{
             order.innerHTML+=`<p>${item.product}</p>
-            <p>price: ${item.price} lei</p>
-            <p>number of items: ${item.noProducts}</p> 
+            <p>Price: ${item.price} lei</p>
+            <p>Number of items: ${item.noProducts}</p> 
             `
             total+=item.price*item.noProducts;
         })
         order.innerHTML+=`
         <h3>TOTAL: ${total} lei<h3>
-        <button id="orderBtn" onclick=showMap()>ORDER</button>
+        <div id="orderBtn">
+        <button id = "orderButton" onclick=showMap()>ORDER</button>
+        </div>
         `
 
  
@@ -64,14 +49,14 @@ function renderCart(){
 
     
     else{
-        window.alert("you have no items in your cart");
+        window.alert("You don't have any items in your cart!");
     }
 }
 
 function showMap(){
     document.querySelector("#orderBtn").innerHTML=``;
     const order=document.querySelector("#order");
-    order.innerHTML+=`<h2>Your order was received and will be at your home soon!</h2>`;
+    order.innerHTML+=`<h2 id="successfulorder">Your order was received and will be at your home soon!</h2><img id="courier" src="media/on the way.svg">`;
     
        initMap();
     document.querySelector("#map").style.height="57vh";
@@ -239,14 +224,15 @@ window.addEventListener('load', startRendering);
 
 var c = document.getElementById("titleCanvas");
 var ctx = c.getContext("2d");
-ctx.font = "55px Arial";
-ctx.fillText("yEAT", 10, 50);
+ctx.font = "95px Arial";
+ctx.fillText("yEAT", 10, 105, 80);
 ctx.textAlign="center";
 ctx.textBaseline="middle";
 
+
 document.getElementById("christmas").play();
 // Create a raster item using the image tag with id='pasta'
-var raster = new Raster('pasta');
+var raster = new Raster("pasta");
 // Move the raster to the center of the view
 raster.position = view.center;
 // Scale the raster by 50%
