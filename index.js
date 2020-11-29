@@ -19,7 +19,7 @@ window.mainPage.innerHTML += `
 
 APP.restaurants=[
     {   id:"dominos",
-        image:'https://i.pinimg.com/originals/d7/17/23/d71723202ccde3f10e638a5da6dba237.jpg',
+        image:'dominos.png',
         name:"Domino's Pizza",
         minPrice:40,
         deliveryPrice:5,
@@ -61,7 +61,7 @@ APP.restaurants=[
     },
 
     {   id: "kfc",
-        image:'https://upload.wikimedia.org/wikipedia/commons/f/ff/Kentucky_Fried_Chicken_201x_logo.svg',
+        image:'kfc.jpg',
         name:"KFC",
         minPrice:30,
         deliveryPrice:9,
@@ -103,7 +103,7 @@ APP.restaurants=[
     },
 
     {   id: "mcDonalds",
-        image:'https://images.safe.com/logos/customers/mcdonalds.png',
+        image:'mcdonalds.png',
         name:"McDonald's",
         minPrice:25,
         deliveryPrice:0,

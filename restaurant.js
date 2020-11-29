@@ -54,7 +54,7 @@ class Restaurant{
                         i++;
                 })
             });
-            restaurant.innerHTML+=`<button name="order${this.name}" type="submit">Order</button>`;
+            restaurant.innerHTML+=`<button name="order${this.name}" type="submit">Add to cart</button>`;
             // restaurant.innerHTML += `
             //         </tbody>
             //     </table>   
