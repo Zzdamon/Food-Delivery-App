@@ -55,7 +55,7 @@ function renderCart(){
         })
         order.innerHTML+=`
         <h3>TOTAL: ${total} lei<h3>
-        <button onclick=showMap()>ORDER</button>
+        <button id="orderBtn" onclick=showMap()>ORDER</button>
         `
 
  
@@ -69,7 +69,10 @@ function renderCart(){
 }
 
 function showMap(){
-
+    document.querySelector("#orderBtn").innerHTML=``;
+    const order=document.querySelector("#order");
+    order.innerHTML+=`<h2>Your order was received and will be at your home soon!</h2>`;
+    
        initMap();
     document.querySelector("#map").style.height="57vh";
     document.querySelector("#map").style.width="100%";
