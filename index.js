@@ -80,7 +80,7 @@ function showMap(){
 
 APP.restaurants=[
     {   id:"dominos",
-        address:[44.2050,28.6439],
+        address:[44.17707369201659,28.62258175164743],
         image:'media/dominos.png',
         name:"Domino's Pizza",
         minPrice:40,
@@ -123,7 +123,7 @@ APP.restaurants=[
     },
 
     {   id: "kfc",
-    address:[44.2050,28.6439],
+    address:[44.2041,28.6336],
     image:'media/kfc.jpg',
         name:"KFC",
         minPrice:30,
