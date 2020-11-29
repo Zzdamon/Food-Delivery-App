@@ -55,6 +55,7 @@ function renderCart(){
 
 function showMap(){
     document.querySelector("#orderBtn").innerHTML=``;
+    document.getElementById("christmas").play();
     const order=document.querySelector("#order");
     order.innerHTML+=`<h2 id="successfulorder">Your order was received and will be at your home soon!</h2><img id="courier" src="media/on the way.svg">`;
     

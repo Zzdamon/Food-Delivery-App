@@ -203,3 +203,27 @@ input
 {
     display: inline-block;
 }
+
+@keyframes animated_yeet
+{
+    0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+}
+
+#yeet
+{
+    animation: animated_yeet 3s 1;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: animated_yeet;
+    border-radius: 5px;
+}
