@@ -27,7 +27,22 @@ window.mainPage.innerHTML += `
 function renderCart(){
     if(APP.cart.length>0){
 
-    mainPage.innerHTML=``;}
+    mainPage.innerHTML=` <header>
+    <div id="topdiv">
+        <h1>yEAT</h1>
+
+    </div>
+    <div id="topimagediv">
+        <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
+    </div>
+</header>`;
+    initMap();
+    document.querySelector("#map").style.height="57vh";
+    document.querySelector("#map").style.width="100%";
+
+}
+
+    
     else{
         window.alert("you have no items in your cart");
     }
@@ -35,6 +50,7 @@ function renderCart(){
 
 APP.restaurants=[
     {   id:"dominos",
+        address:[44.2050,28.6439],
         image:'media/dominos.png',
         name:"Domino's Pizza",
         minPrice:40,
@@ -77,7 +93,8 @@ APP.restaurants=[
     },
 
     {   id: "kfc",
-        image:'media/kfc.jpg',
+    address:[44.2050,28.6439],
+    image:'media/kfc.jpg',
         name:"KFC",
         minPrice:30,
         deliveryPrice:9,
@@ -119,7 +136,8 @@ APP.restaurants=[
     },
 
     {   id: "mcDonalds",
-        image:'media/mcdonalds.png',
+    address:[44.2050,28.6439],
+    image:'media/mcdonalds.png',
         name:"McDonald's",
         minPrice:25,
         deliveryPrice:0,

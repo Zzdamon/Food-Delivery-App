@@ -138,7 +138,7 @@ class Restaurant{
             if(event.target[noProd].value>0){
                     // console.log(event.target[noProd].value);
 
-                    order.push({product:item.name,
+                    order.push({ restaurant:rest,product:item.name,
                     price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
              });
@@ -172,7 +172,7 @@ class Restaurant{
                 if(event.target[noProd].value>0){
                         // console.log(event.target[noProd].value);
     
-                        order.push({product:item.name,
+                        order.push({ restaurant:rest,product:item.name,
                         price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
                  });
@@ -201,7 +201,7 @@ class Restaurant{
                 if(event.target[noProd].value>0){
                         // console.log(event.target[noProd].value);
     
-                        order.push({product:item.name,
+                        order.push({ restaurant:rest ,product:item.name,
                         price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
                  });
