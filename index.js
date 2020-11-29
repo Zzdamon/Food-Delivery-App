@@ -5,16 +5,21 @@ window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
     <header>
         <div id="topdiv">
-            <img style="float:left; max-height:65px;" src="media/stars.png" alt>
-            <img style="float:right;max-height:65px;" src="media/stars.png" alt>
             <canvas id="titleCanvas">yEAT</canvas>
+            <img id="cart" src="https://static.thenounproject.com/png/5641-200.png" alt="shopping cart">
+
         </div>
         <div id="topimagediv">
             <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
         </div>
     </header>
     <main></main>
-    <footer></footer>
+    <footer>
+    <img style="float:left; max-height:65px;" src="media/stars.png" alt>
+    <img style="float:right;max-height:65px;" src="media/stars.png" alt>
+
+    </footer>
+    
 `;
 
 APP.restaurants=[

@@ -6,13 +6,29 @@
 }
 
 #topdiv
-{
-    height: 65px;
+{   display: flex;
+    justify-content: space-between;
+    max-height: 8vh;
+    /* width: auto; */
     font-size: 35px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     background-color:rgb(146, 174, 69) ;
     margin: auto;
+    /* padding: 2vh; */
+}
+
+#cart{
+    height:7vh; width:auto; 
+    padding:0.6vh;
+    margin: 0.6vh;
+}
+#cart:hover{
+    /* background-color:white; */
+    border-style: solid;
+    border-color: white;
+    border-radius: 50%;
+
 }
 
 .restaurant {

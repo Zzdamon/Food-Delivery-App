@@ -140,7 +140,8 @@ class Restaurant{
 
                     order.push({product:item.name,
                     price:item.price,
-                noProducts:event.target[noProd].value });
+                    noProducts: parseInt(event.target[noProd].value)
+             });
                 console.log(order);
                 }
             i++;
@@ -148,20 +149,70 @@ class Restaurant{
         })
         // APP.restaurants[0].menu
 
+        APP.cart=order;
 
         // console.log(APP.restaurants[0].menu.popular[0].name.);
 
         }
 
-        form1.onsubmit=function(event){
-            event.preventDefault();
 
-          console.log (event.target.dominosprodName0.value);
+        form1.onsubmit=function(event){
+        
+            event.preventDefault();
+            let i=0;
+            let rest=APP.restaurants[0];
+            let order=[];
+            Object.keys(rest.menu).forEach((item)=>{
+
+                rest.menu[item].forEach((item)=>{
+                let noProd=rest.id+ "noProd"+i;
+                // console.log(noProd);
+                // console.log(event.target.noProd);
+    
+                if(event.target[noProd].value>0){
+                        // console.log(event.target[noProd].value);
+    
+                        order.push({product:item.name,
+                        price:item.price,
+                    noProducts: parseInt(event.target[noProd].value)
+                 });
+                    console.log(order);
+                    }
+                i++;
+                })
+            })
+            APP.cart=order;
+
+        //   console.log (event.target.dominosprodName0.value);
         }
         form2.onsubmit=function(event){
             event.preventDefault();
 
-          console.log (event.target.mcDonaldsprodName0.value);
+            let i=0;
+            let rest=APP.restaurants[2];
+            let order=[];
+            Object.keys(rest.menu).forEach((item)=>{
+
+                rest.menu[item].forEach((item)=>{
+                let noProd=rest.id+ "noProd"+i;
+                // console.log(noProd);
+                // console.log(event.target.noProd);
+    
+                if(event.target[noProd].value>0){
+                        // console.log(event.target[noProd].value);
+    
+                        order.push({product:item.name,
+                        price:item.price,
+                    noProducts: parseInt(event.target[noProd].value)
+                 });
+                    console.log(order);
+                    }
+                i++;
+                })
+            })
+            APP.cart=order;
+
+        //   console.log (event.target.mcDonaldsprodName0.value);
         }
     }
     window.addEventListener('load', addFormFunctionality);
