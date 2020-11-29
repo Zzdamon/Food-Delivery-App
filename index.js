@@ -1,12 +1,14 @@
 // cream un obiect global, numit APP
 window.APP = {};
+APP.cart=[];
+
 // index.js fiind primul fisier care se incarca, mainPage va fi available in toate celelalte fisiere
 window.mainPage = document.querySelector('#root');
 window.mainPage.innerHTML += `
     <header>
         <div id="topdiv">
             <canvas id="titleCanvas">yEAT</canvas>
-            <img id="cart" src="https://static.thenounproject.com/png/5641-200.png" alt="shopping cart">
+            <img id="cart" src="https://static.thenounproject.com/png/5641-200.png" alt="shopping cart" onclick=renderCart()>
 
         </div>
         <div id="topimagediv">
@@ -21,6 +23,15 @@ window.mainPage.innerHTML += `
     </footer>
     
 `;
+
+function renderCart(){
+    if(APP.cart.length>0){
+
+    mainPage.innerHTML=``;}
+    else{
+        window.alert("you have no items in your cart");
+    }
+}
 
 APP.restaurants=[
     {   id:"dominos",
@@ -150,7 +161,6 @@ APP.restaurants=[
     }
 ]
 
-APP.cart=[];
 APP.menus=[];
 
 //add to local storage
