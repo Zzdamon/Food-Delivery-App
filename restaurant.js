@@ -10,6 +10,8 @@ class Restaurant{
             this.priceRange=priceRange;
             this.deliveryTime=deliveryTime;
             this.menu=menu;
+            // APP.menus.push({id:this.id,
+            // menu:this.menu});
         }
 
         renderMenu(){
@@ -26,7 +28,11 @@ class Restaurant{
             //         <table>
             //             <tbody>
             //     `;
+            
             let i =0;
+            // let menu={id: this.id,
+            // products:[]};
+
             Object.keys(this.menu).forEach((item)=>{
                 
                 
@@ -34,7 +40,6 @@ class Restaurant{
                 restaurant.innerHTML+=`
                 <h2>${item}</h2>
                 `;
-                // let i=0;
 
                 this.menu[item].forEach((item)=>{
                     let itemName=this.id+ "prodName"+i;    
@@ -51,6 +56,7 @@ class Restaurant{
                     <input hidden type="text" name=${itemName} value=${itemNameName}>
 
                     `
+                    // menu.products.push(itemName);
                         i++;
                 })
             });
@@ -112,11 +118,39 @@ class Restaurant{
         
         const form = document.querySelector('#Menukfc');
         const form1 = document.querySelector('#Menudominos');
+        const form2 = document.querySelector('#MenumcDonalds');
 
         form.onsubmit=function(event){
             event.preventDefault();
 
-          console.log (event.target.kfcprodName0.value);
+        //   console.log (event.target.kfcprodName0.value);
+        let i=0;
+        let rest=APP.restaurants[1];
+        let order=[];
+
+        Object.keys(rest.menu).forEach((item)=>{
+
+            rest.menu[item].forEach((item)=>{
+            let noProd=rest.id+ "noProd"+i;
+            // console.log(noProd);
+            // console.log(event.target.noProd);
+
+            if(event.target[noProd].value>0){
+                    // console.log(event.target[noProd].value);
+
+                    order.push({product:item.name,
+                    price:item.price,
+                noProducts:event.target[noProd].value });
+                console.log(order);
+                }
+            i++;
+            })
+        })
+        // APP.restaurants[0].menu
+
+
+        // console.log(APP.restaurants[0].menu.popular[0].name.);
+
         }
 
         form1.onsubmit=function(event){
@@ -124,7 +158,11 @@ class Restaurant{
 
           console.log (event.target.dominosprodName0.value);
         }
+        form2.onsubmit=function(event){
+            event.preventDefault();
 
+          console.log (event.target.mcDonaldsprodName0.value);
+        }
     }
     window.addEventListener('load', addFormFunctionality);
 
