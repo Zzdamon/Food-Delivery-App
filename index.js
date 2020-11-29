@@ -1,6 +1,7 @@
 // cream un obiect global, numit APP
 window.APP = {};
-APP.cart=[];
+APP.cart={restaurant:"",
+products:[]};
 
 // index.js fiind primul fisier care se incarca, mainPage va fi available in toate celelalte fisiere
 window.mainPage = document.querySelector('#root');
@@ -25,7 +26,7 @@ window.mainPage.innerHTML += `
 `;
 
 function renderCart(){
-    if(APP.cart.length>0){
+    if(APP.cart.products.length>=1){
 
     mainPage.innerHTML=` <header>
     <div id="topdiv">
@@ -36,9 +37,28 @@ function renderCart(){
         <img src="media/foodiesfeed.com_pizza-with-italian-sausage.jpg" alt>
     </div>
 </header>`;
-    initMap();
-    document.querySelector("#map").style.height="57vh";
-    document.querySelector("#map").style.width="100%";
+
+        mainPage.innerHTML+=`<div id="order">
+        <h2>Order Details:</h2>
+        <p>restaurant: ${APP.cart.restaurant.name}</p>
+        <p>products:</p>
+        </div>
+        `
+        const order=document.querySelector("#order");
+        let total=0;
+        APP.cart.products.forEach((item)=>{
+            order.innerHTML+=`<p>${item.product}</p>
+            <p>price: ${item.price} lei</p>
+            <p>number of items: ${item.noProducts}</p> 
+            `
+            total+=item.price*item.noProducts;
+        })
+        order.innerHTML+=`
+        <h3>TOTAL: ${total} lei<h3>
+        <button onclick=showMap()>ORDER</button>
+        `
+
+ 
 
 }
 
@@ -46,6 +66,13 @@ function renderCart(){
     else{
         window.alert("you have no items in your cart");
     }
+}
+
+function showMap(){
+
+       initMap();
+    document.querySelector("#map").style.height="57vh";
+    document.querySelector("#map").style.width="100%";
 }
 
 APP.restaurants=[

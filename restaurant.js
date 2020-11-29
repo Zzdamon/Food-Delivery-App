@@ -138,7 +138,7 @@ class Restaurant{
             if(event.target[noProd].value>0){
                     // console.log(event.target[noProd].value);
 
-                    order.push({ restaurant:rest,product:item.name,
+                    order.push({ product:item.name,
                     price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
              });
@@ -149,7 +149,8 @@ class Restaurant{
         })
         // APP.restaurants[0].menu
 
-        APP.cart=order;
+        APP.cart.restaurant=rest;
+        APP.cart.products=order;
 
         // console.log(APP.restaurants[0].menu.popular[0].name.);
 
@@ -172,7 +173,7 @@ class Restaurant{
                 if(event.target[noProd].value>0){
                         // console.log(event.target[noProd].value);
     
-                        order.push({ restaurant:rest,product:item.name,
+                        order.push({ product:item.name,
                         price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
                  });
@@ -181,8 +182,8 @@ class Restaurant{
                 i++;
                 })
             })
-            APP.cart=order;
-
+            APP.cart.restaurant=rest;
+            APP.cart.products=order;
         //   console.log (event.target.dominosprodName0.value);
         }
         form2.onsubmit=function(event){
@@ -201,7 +202,7 @@ class Restaurant{
                 if(event.target[noProd].value>0){
                         // console.log(event.target[noProd].value);
     
-                        order.push({ restaurant:rest ,product:item.name,
+                        order.push({ product:item.name,
                         price:item.price,
                     noProducts: parseInt(event.target[noProd].value)
                  });
@@ -210,7 +211,8 @@ class Restaurant{
                 i++;
                 })
             })
-            APP.cart=order;
+            APP.cart.restaurant=rest;
+            APP.cart.products=order;
 
         //   console.log (event.target.mcDonaldsprodName0.value);
         }
