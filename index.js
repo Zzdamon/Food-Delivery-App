@@ -42,12 +42,7 @@ function renderCart(){
         <button id = "orderButton" onclick=showMap()>ORDER</button>
         </div>
         `
-
- 
-
 }
-
-    
     else{
         window.alert("You don't have any items in your cart!");
     }

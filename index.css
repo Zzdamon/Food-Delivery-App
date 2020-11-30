@@ -170,7 +170,8 @@ input
 }
 
 #order
-{
+{    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px;
     background-color: bisque;
     text-align: center;
@@ -216,6 +217,7 @@ input
 
 #yeet
 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     animation: animated_yeet 3s 1;
     animation-duration: 2s;
     animation-timing-function: ease;
