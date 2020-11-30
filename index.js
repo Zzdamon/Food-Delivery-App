@@ -109,7 +109,7 @@ APP.restaurants=[
         name:"KFC",
         minPrice:30,
         deliveryPrice:9,
-        description:"American burgers, Fried Chicken",
+        description:"Fried Chicken",
         priceRange:'$',
         deliveryTime:'25min',
         menu:{

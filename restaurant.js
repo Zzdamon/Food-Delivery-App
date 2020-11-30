@@ -16,7 +16,7 @@ class Restaurant{
 
         renderMenu(){
             console.log('RENDER MENU')
-            const restaurant=document.querySelector('#Menu'+this.id);
+            const restaurant=document.querySelector('#Menu'+this.id+"body");
             // restaurant.innerHTML+=``;
             // restaurant.innerHTML+=`<form id='addToCartForm' >
             // `;
@@ -38,7 +38,11 @@ class Restaurant{
                 
 
                 restaurant.innerHTML+=`
-                <h2>${item}</h2>
+                <tr>
+                    <td>
+                        <h2>${item}</h2>
+                    </td>
+                </tr>
                 `;
 
                 this.menu[item].forEach((item)=>{
@@ -51,16 +55,17 @@ class Restaurant{
 
                     // let value=[this.name,item.name,item.price];
                     restaurant.innerHTML+=`
-                    <label > ${item.name} ${item.price} lei</label>
-                    <input type="number" name=${noProducts}>
-                    <input hidden type="text" name=${itemName} value=${itemNameName}>
-
+                    <tr>
+                        <td id="productname"><label> ${item.name} ${item.price} lei</label></td>
+                        <td><input type="number" name=${noProducts}></td>
+                        <td><input hidden type="text" name=${itemName} value=${itemNameName}></td>
+                    </tr>
                     `
                     // menu.products.push(itemName);
                         i++;
                 })
             });
-            restaurant.innerHTML+=`<button name="order${this.name}" type="submit">Add to cart</button>`;
+            restaurant.innerHTML+=`<tr><td><button name="order${this.name}" type="submit">Add to cart</button></td></tr>`;
             // restaurant.innerHTML += `
             //         </tbody>
             //     </table>   
@@ -84,7 +89,7 @@ class Restaurant{
                 <div class = "profilediv">
                     <img class="profile" src= ${this.image} alt="Restaurant logo" id="logo">
                 </div>
-                <div>
+                <div id="restaurantdiv">
                     <h2>${this.name}</h2>
                     <p>${this.description}<p>
                     <img class="icon" src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Simple_icon_time.svg/1200px-Simple_icon_time.svg.png'>
@@ -97,11 +102,17 @@ class Restaurant{
                     <span>Min. ${this.minPrice} lei</span>
                     <br>
                     <span>${this.priceRange}</span>
-                    
+                    <br />
+                    <button id="${idC}button" onclick="showMenu('${idC}formdiv','${idC}button')">Show menu</button>
                 </div>
-               
-                <form class="theforms" id=${idC}>
-                </form>
+                <div class="formdiv" id="${idC}formdiv">
+                    <form class="theforms" id=${idC}>
+                        <table>
+                            <tbody id=${idC}body>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
             </li>
             `
                 this.renderMenu();
@@ -219,5 +230,18 @@ class Restaurant{
     }
     window.addEventListener('load', addFormFunctionality);
 
-
-
+    function showMenu(id, idbutton)
+    {
+        var formdiv = document.getElementById(id);
+        var button = document.getElementById(idbutton)
+        if (formdiv.style.display == "block")
+        {
+            formdiv.style.display = "none";
+            button.innerHTML='Show menu'
+        }
+        else
+        {
+            formdiv.style.display = "block";
+            button.innerHTML='Hide menu'
+        }
+    }

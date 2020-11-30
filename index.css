@@ -229,3 +229,29 @@ input
     animation-name: animated_yeet;
     border-radius: 5px;
 }
+
+.formdiv
+{
+    display: none;
+    width: 500px;
+}
+
+#restaurantdiv
+{
+    width: 250px;
+}
+
+#productname
+{
+    width: 250px;
+}
+
+@media screen and(max-width: 799px)
+{
+
+}
+
+@media screen and(max-width: 599px)
+{
+    
+}
