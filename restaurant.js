@@ -86,8 +86,8 @@ class Restaurant{
             let idC="Menu"+this.id;
             restaurantList.innerHTML+=`
             <li class = 'restaurant' id=${this.id}>
-                <div class = "profilediv">
-                    <img class="profile" src= ${this.image} alt="Restaurant logo" id="logo">
+                <div class = "profilediv" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <img class="profile" src= ${this.image} alt="Restaurant logo" id="${idC}logo" draggable="true" ondragstart="drag(event)">
                 </div>
                 <div id="restaurantdiv">
                     <h2>${this.name}</h2>
@@ -245,3 +245,17 @@ class Restaurant{
             button.innerHTML='Hide menu'
         }
     }
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}

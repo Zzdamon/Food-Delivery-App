@@ -255,3 +255,16 @@ input
 {
     
 }
+
+#drophere
+{
+    width: 50%;
+    height: 216px;
+    float:left;
+    background-color: bisque;
+}
+
+#drophere img
+{
+    width: 195px;
+}

@@ -24,6 +24,19 @@
     <script type="text/javascript" src="restaurant.js"></script>
     <script type="text/javascript" src="restaurantList.js"></script>
 
+    <script>
+        addEventListener("keydown", function(event) {
+            if (event.keyCode==49) 
+        showMenu("Menudominosformdiv", "Menudominosbutton");
+    else 
+        if (event.keyCode==50)
+            showMenu("Menukfcformdiv", "Menukfcbutton");
+        else
+            if (event.keyCode==51) 
+                showMenu("MenumcDonaldsformdiv", "MenumcDonaldsbutton");
+  });
+    </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZmmTQPwqmrg4n-4I7pfDvLTT26GlSCOo&libraries=geometry&callback=initMap">
  </script>
@@ -63,7 +76,24 @@
           <audio id="christmas" controls>
             <source src="media/christmas.mp3" type="audio/mpeg">
         </audio>
-        
+        <script>
+            function allowDrop(ev) {
+              ev.preventDefault();
+            }
+            
+            function drag(ev) {
+              ev.dataTransfer.setData("text", ev.target.id);
+            }
+            
+            function drop(ev) {
+              ev.preventDefault();
+              var data = ev.dataTransfer.getData("text");
+              ev.target.appendChild(document.getElementById(data));
+            }
+        </script>
+        <div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h4>Which is your favourite restaurant?</h4>
+        </div>
     </footer>
     
 </body>

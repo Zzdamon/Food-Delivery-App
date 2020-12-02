@@ -235,3 +235,17 @@ raster.position = view.center;
 raster.scale(0.5);
 // Rotate the raster by 45 degrees:
 raster.rotate(45);
+
+window.addEventListener('keydown', logKey);
+
+function logKey(e) {
+    window.alert("aaa")
+    if (e.altkey) 
+        showMenu("Menudominosformdiv", "Menudominosbutton");
+    else 
+        if (e.shiftKey)
+            showMenu("Menukfcformdiv", "Menukfcbutton");
+        else
+            if (e.ctrlKey) 
+                showMenu("MenumcDonaldsformdiv", "MenumcDonaldsbutton");
+}
