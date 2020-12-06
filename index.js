@@ -11,11 +11,11 @@ window.mainPage.innerHTML += `
 
     
 `;
-
+var video
+var pastaImage
 function renderAbout(){
     mainPage.innerHTML=`
         <svg id="thesvg">
-
             <rect id="therectangle" width="400" height="100" style="fill:bisque;" />
             <text x="100" y="25">yEAT is a fictional company that delivers hot and delicious food in these hard times.
                 <tspan x="100" y="50">Order with confidence from us and we will deliver your food in the shortest time possible! 
@@ -39,8 +39,26 @@ function renderAbout(){
             </g>
           </svg>
           <video id = "foodvideo" controls>
-	<source src="media/cooking.mp4" type="video/mp4">
-</video>`;
+                <source src="media/cooking.mp4" type="video/mp4">
+            </video>
+            <div id="thefilters">
+                <p>Filters for the delicious video:</p>
+                <button class="buttons" onclick="blackwhite()">Black and white</button>
+                <button class="buttons" onclick="lessBright()">Decrease brightness</button>
+                <button class="buttons" onclick="maxBright()">Increase brightness</button>
+                <button class="buttons" onclick="lessOpacity()">Decrease opacity</button>
+                <button class="buttons" onclick="nofilter()">Back to normal</button>
+                <p>Filters for the delicious photo:</p>
+                <button class="buttons" onclick="blackwhiteimg()">Black and white</button>
+                <button class="buttons" onclick="saturateImg()">Saturate</button>
+                <button class="buttons" onclick="desaturateImg()">Desaturate</button>
+                <button class="buttons" onclick="blurimg()">Blur</button>
+                <button class="buttons" onclick="nofilterimg()">Back to normal</button>
+            </div>
+            
+`;
+video = document.getElementById("foodvideo")
+pastaImage = document.getElementById("topimagePizza")
 }
 
 function renderCart(){
@@ -72,9 +90,8 @@ function renderCart(){
         <h3>Delivery fee: ${APP.cart.restaurant.deliveryPrice} lei</h3>
         <h2>TOTAL: ${total+APP.cart.restaurant.deliveryPrice} lei<h2>
         <div id="orderBtn">
-        <button id = "orderButton" onclick=showMap(${total})>ORDER</button>
+        <button id = "orderButton" class="buttons" onclick=showMap(${total})>ORDER</button>
         </div>
-      
         `
 }
     else{
@@ -266,34 +283,52 @@ ctx.textAlign="center";
 ctx.textBaseline="middle";
 
 
-document.getElementById("christmas").play();
-// Create a raster item using the image tag with id='pasta'
-var raster = new Raster("pasta");
-// Move the raster to the center of the view
-raster.position = view.center;
-// Scale the raster by 50%
-raster.scale(0.5);
-// Rotate the raster by 45 degrees:
-raster.rotate(45);
-
-window.addEventListener('keydown', logKey);
-
-function logKey(e) {
-    window.alert("aaa")
-    if (e.altkey) 
-        showMenu("Menudominosformdiv", "Menudominosbutton");
-    else 
-        if (e.shiftKey)
-            showMenu("Menukfcformdiv", "Menukfcbutton");
-        else
-            if (e.ctrlKey) 
-                showMenu("MenumcDonaldsformdiv", "MenumcDonaldsbutton");
-}
-
 function renderHomePage(){
     mainPage.innerHTML=`	<ul id="restaurant-list">
 	</ul>`;
 
     startRendering();
     addFormFunctionality();
+}
+
+function blackwhite(){
+    video.style.filter = "grayscale(100%)";
+}
+
+function lessBright(){
+    video.style.filter = "brightness(30%)";
+}
+
+function maxBright(){
+    video.style.filter = "brightness(100%)";
+}
+
+function lessOpacity(){
+    video.style.filter = "opacity(50%)";
+}
+
+function nofilter(){
+    video.style.filter = "none";
+}
+
+// for image:
+
+function blackwhiteimg(){
+    pastaImage.style.filter = "grayscale(100%)";
+}
+
+function saturateImg(){
+    pastaImage.style.filter = "saturate(8)";
+}
+
+function desaturateImg(){
+    pastaImage.style.filter = "saturate(0)";
+}
+
+function blurimg(){
+    pastaImage.style.filter = "blur(3px)";
+}
+
+function nofilterimg(){
+    pastaImage.style.filter = "none";
 }

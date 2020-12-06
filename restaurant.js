@@ -65,7 +65,7 @@ class Restaurant{
                         i++;
                 })
             });
-            restaurant.innerHTML+=`<tr><td><button name="order${this.name}" type="submit">Add to cart</button></td></tr>`;
+            restaurant.innerHTML+=`<tr><td><button name="order${this.name}" class = "buttons" type="submit">Add to cart</button></td></tr>`;
             // restaurant.innerHTML += `
             //         </tbody>
             //     </table>   
@@ -103,7 +103,7 @@ class Restaurant{
                     <br>
                     <span>${this.priceRange}</span>
                     <br />
-                    <button id="${idC}button" onclick="showMenu('${idC}formdiv','${idC}button')">Show menu</button>
+                    <button id="${idC}button" class = "buttons" onclick="showMenu('${idC}formdiv','${idC}button')">Show menu</button>
                 </div>
                 <div class="formdiv" id="${idC}formdiv">
                     <form class="theforms" id=${idC}>
@@ -235,21 +235,21 @@ class Restaurant{
     }
     window.addEventListener('load', addFormFunctionality);
 
-    function showMenu(id, idbutton)
+function showMenu(id, idbutton)
+{
+    var formdiv = document.getElementById(id);
+    var button = document.getElementById(idbutton)
+    if (formdiv.style.display == "block")
     {
-        var formdiv = document.getElementById(id);
-        var button = document.getElementById(idbutton)
-        if (formdiv.style.display == "block")
-        {
-            formdiv.style.display = "none";
-            button.innerHTML='Show menu'
-        }
-        else
-        {
-            formdiv.style.display = "block";
-            button.innerHTML='Hide menu'
-        }
+        formdiv.style.display = "none";
+        button.innerHTML='Show menu'
     }
+    else
+    {
+        formdiv.style.display = "block";
+        button.innerHTML='Hide menu'
+    }
+}
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
