@@ -266,9 +266,9 @@ input
     width: 250px;
 }
 
-@media screen and(max-width: 799px)
+@media screen and(max-width: 375px)
 {
-
+    
 }
 
 @media screen and(max-width: 599px)
