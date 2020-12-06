@@ -12,6 +12,37 @@ window.mainPage.innerHTML += `
     
 `;
 
+function renderAbout(){
+    mainPage.innerHTML=`
+        <svg id="thesvg">
+
+            <rect id="therectangle" width="400" height="100" style="fill:bisque;" />
+            <text x="100" y="25">yEAT is a fictional company that delivers hot and delicious food in these hard times.
+                <tspan x="100" y="50">Order with confidence from us and we will deliver your food in the shortest time possible! 
+                    </tspan>
+                <tspan x="100" y="75">Enjoy the provided video and audio while your courier brings your food to your door.</tspan>
+                <tspan x="100" y="100">For more information please contact us.</tspan>
+                <tspan x="10" y="125">Don't forget to check our website from time to time to get good discounts!</tspan>
+            </text>
+            <defs>
+                <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                  <stop offset="0%" style="stop-color:rgb(197, 202, 194);
+                  stop-opacity:0" />
+                  <stop offset="100%" style="stop-color:rgb(132, 197, 91);stop-opacity:1" />
+                </radialGradient>
+              </defs>
+            <g id="circle">
+                <svg height="100" width="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="url(#grad1)" />
+                    <text id="yeet" x="30" y="55">yEAT</text>
+                </svg>
+            </g>
+          </svg>
+          <video id = "foodvideo" controls>
+	<source src="media/cooking.mp4" type="video/mp4">
+</video>`;
+}
+
 function renderCart(){
     if(APP.cart.products.length>=1){
 
@@ -22,7 +53,7 @@ function renderCart(){
 </header>`;
 
         mainPage.innerHTML+=`<div id="order">
-        <h2>Order Details:</h2>
+        <h1>Order Details:</h1>
         <p>Restaurant: ${APP.cart.restaurant.name}</p>
         <p>Product(s):</p>
         </div>
@@ -37,10 +68,13 @@ function renderCart(){
             total+=item.price*item.noProducts;
         })
         order.innerHTML+=`
-        <h3>TOTAL: ${total} lei<h3>
+        <h3>Total order: ${total} lei</h3>
+        <h3>Delivery fee: ${APP.cart.restaurant.deliveryPrice} lei</h3>
+        <h2>TOTAL: ${total+APP.cart.restaurant.deliveryPrice} lei<h2>
         <div id="orderBtn">
-        <button id = "orderButton" onclick=showMap()>ORDER</button>
+        <button id = "orderButton" onclick=showMap(${total})>ORDER</button>
         </div>
+      
         `
 }
     else{
@@ -48,7 +82,9 @@ function renderCart(){
     }
 }
 
-function showMap(){
+function showMap(total){
+    let minOrder=APP.cart.restaurant.minPrice;
+    if(APP.cart.restaurant.minPrice<total ){
     document.querySelector("#orderBtn").innerHTML=``;
     document.getElementById("christmas").play();
     const order=document.querySelector("#order");
@@ -57,6 +93,10 @@ function showMap(){
        initMap();
     document.querySelector("#map").style.height="57vh";
     document.querySelector("#map").style.width="100%";
+    }
+    else{
+        window.alert(`Your order is too small! Your order must be at least ${minOrder} lei`);
+    }
 }
 
 APP.restaurants=[
@@ -248,4 +288,12 @@ function logKey(e) {
         else
             if (e.ctrlKey) 
                 showMenu("MenumcDonaldsformdiv", "MenumcDonaldsbutton");
+}
+
+function renderHomePage(){
+    mainPage.innerHTML=`	<ul id="restaurant-list">
+	</ul>`;
+
+    startRendering();
+    addFormFunctionality();
 }

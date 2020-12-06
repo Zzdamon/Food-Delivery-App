@@ -162,6 +162,7 @@ class Restaurant{
 
         APP.cart.restaurant=rest;
         APP.cart.products=order;
+        window.alert("Items were added to your cart!");
 
         // console.log(APP.restaurants[0].menu.popular[0].name.);
 
@@ -195,6 +196,8 @@ class Restaurant{
             })
             APP.cart.restaurant=rest;
             APP.cart.products=order;
+            window.alert("Items were added to your cart!");
+
         //   console.log (event.target.dominosprodName0.value);
         }
         form2.onsubmit=function(event){
@@ -224,6 +227,8 @@ class Restaurant{
             })
             APP.cart.restaurant=rest;
             APP.cart.products=order;
+
+            window.alert("Items were added to your cart!");
 
         //   console.log (event.target.mcDonaldsprodName0.value);
         }

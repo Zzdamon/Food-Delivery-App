@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     height: 8vh;
-    /* width: auto; */
+    width: auto;
     /* font-size: 35px; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
@@ -25,12 +25,12 @@
     width: auto;
 } */
 
-#cart{
+#cart, #homeBtn{
     height:7vh; width:auto; 
     padding:0.6vh;
     margin: 0.6vh;
 }
-#cart:hover{
+#cart:hover, #homeBtn:hover{
     /* background-color:white; */
     border-style: solid;
     border-color: white;
@@ -39,10 +39,24 @@
 
 }
 
+#restaurant-list{
+    background-color:rgb(146, 174, 69); 
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+
+
+}
+
 .restaurant {
     background-color: bisque;
     display: flex;
-    border: 1px solid rgb(146, 174, 69);
+    justify-content: left;
+    /* border: 0.5vh solid rgb(146, 174, 69); */
+    /* padding: 2vh; */
+    /* margin-top: 0.7vh; */
+    margin-bottom: 0.7vh;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
 }
 
 #topimagediv img
@@ -86,11 +100,11 @@ button
     /* position: relative; */
 
     
-    top: 20px;
+    top: 7vh;
     display: block;
     margin: 0px auto;
     justify-content: center;
-    padding-left:260px;
+    /* padding-left:10vh; */
     
     animation: animated_div 3s 1;
     animation-duration: 2s;
@@ -119,6 +133,12 @@ button
     background-color: black;
     animation-name: example;
     animation-duration: 2s;
+}
+
+footer{
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
 }
 
 #foodvideo
@@ -258,13 +278,43 @@ input
 
 #drophere
 {
-    width: 50%;
     height: 216px;
-    float:left;
+    width: auto;
+
+    margin: 1.5vh;
+    /* float:left; */
     background-color: bisque;
 }
 
 #drophere img
 {
     width: 195px;
+}
+
+.aboutContent{
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    /* flex-direction: column; */
+    /* margin: 5vh; */
+}
+
+#about{
+    text-align: center;
+}
+
+#about:hover{
+    /* border-style: solid; */
+    /* border-color: white; */
+    /* border-radius: 50%; */
+    cursor: pointer;
+    margin:0.5vh;
+    transform: scale(1.2);
+
+}
+
+.footerAbout{
+    display: flex;
+    justify-content:center ;
+    margin:1vh;
 }
