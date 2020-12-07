@@ -266,16 +266,6 @@ input
     width: 250px;
 }
 
-@media screen and(max-width: 375px)
-{
-    
-}
-
-@media screen and(max-width: 599px)
-{
-    
-}
-
 #drophere
 {
     height: 216px;
@@ -315,7 +305,7 @@ input
 
 .footerAbout{
     display: flex;
-    justify-content:center ;
+    justify-content: center;
     margin:1vh;
 }
 
@@ -337,10 +327,24 @@ input
 
 footer
 {
-    background-color:rgb(146, 174, 69) ;
+    background-color:rgb(146, 174, 69);
 }
 
 body
 {
     background-color: bisque;
+}
+
+@media screen and (max-width: 599px)
+{
+    .rectangletext 
+    {
+        display: none;
+    }
+    .buttons
+    {
+        font-size: 2vh;
+        width: 15vw;
+        height: 7vh;
+    }
 }

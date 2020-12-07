@@ -17,7 +17,7 @@ function renderAbout(){
     mainPage.innerHTML=`
         <svg id="thesvg">
             <rect id="therectangle" width="400" height="100" style="fill:bisque;" />
-            <text x="100" y="25">yEAT is a fictional company that delivers hot and delicious food in these hard times.
+            <text class="rectangletext" x="100" y="25">yEAT is a fictional company that delivers hot and delicious food in these hard times.
                 <tspan x="100" y="50">Order with confidence from us and we will deliver your food in the shortest time possible! 
                     </tspan>
                 <tspan x="100" y="75">Enjoy the provided video and audio while your courier brings your food to your door.</tspan>
@@ -59,8 +59,8 @@ function renderAbout(){
                 <button class="buttons" onclick="pausemusic()">Pause the music</button>
                 <button class="buttons" onclick="loopmusic()">Loop the music</button>
                 <button class="buttons" onclick="mutemusic()">Mute the music</button>
-                <button class="buttons" onclick="lowervolume()">Increase the volume</button>
-                <button class="buttons" onclick="increasevolume()">Decrease the volume</button>
+                <button class="buttons" onclick="lowervolume()">Increase volume</button>
+                <button class="buttons" onclick="increasevolume()">Decrease volume</button>
             </div>
             
 `;
