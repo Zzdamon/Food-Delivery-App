@@ -54,6 +54,13 @@ function renderAbout(){
                 <button class="buttons" onclick="desaturateImg()">Desaturate</button>
                 <button class="buttons" onclick="blurimg()">Blur</button>
                 <button class="buttons" onclick="nofilterimg()">Back to normal</button>
+                <p>Filters for the christmassy audio:</p>
+                <button class="buttons" onclick="playmusic()">Play the music</button>
+                <button class="buttons" onclick="pausemusic()">Pause the music</button>
+                <button class="buttons" onclick="loopmusic()">Loop the music</button>
+                <button class="buttons" onclick="mutemusic()">Mute the music</button>
+                <button class="buttons" onclick="lowervolume()">Increase the volume</button>
+                <button class="buttons" onclick="increasevolume()">Decrease the volume</button>
             </div>
             
 `;
@@ -331,4 +338,51 @@ function blurimg(){
 
 function nofilterimg(){
     pastaImage.style.filter = "none";
+}
+
+function playmusic()
+{
+    var myaudio = document.getElementById("christmas")
+    myaudio.play()
+    myaudio.volume=1
+}
+
+function pausemusic()
+{
+    var myaudio = document.getElementById("christmas")
+    myaudio.pause()
+}
+
+function stopmusic()
+{
+    var myaudio = document.getElementById("christmas")
+    myaudio.stop()
+
+}
+
+function mutemusic()
+{
+    var myaudio = document.getElementById("christmas")
+    myaudio.volume=0
+}
+
+function loopmusic()
+{
+    var myaudio = document.getElementById("christmas")
+    myaudio.loop=true
+}
+
+function lowervolume()
+{
+    var myaudio = document.getElementById("christmas")
+    if(myaudio.volume<=0.9)
+        myaudio.volume+=0.1
+}
+
+function increasevolume()
+{
+    var myaudio = document.getElementById("christmas")
+    if(myaudio.volume>=0.1)
+        myaudio.volume-=0.1
+
 }
