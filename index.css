@@ -12,12 +12,10 @@
     justify-content: space-between;
     height: 8vh;
     width: auto;
-    /* font-size: 35px; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
     background-color:rgb(146, 174, 69) ;
     margin: auto;
-    /* padding: 2vh; */
 }
 
 /* #map{
@@ -31,7 +29,6 @@
     margin: 0.6vh;
 }
 #cart:hover, #homeBtn:hover{
-    /* background-color:white; */
     border-style: solid;
     border-color: white;
     border-radius: 50%;
@@ -51,12 +48,13 @@
     background-color: bisque;
     display: flex;
     justify-content: left;
-    /* border: 0.5vh solid rgb(146, 174, 69); */
-    /* padding: 2vh; */
-    /* margin-top: 0.7vh; */
     margin-bottom: 0.7vh;
     margin-left: 1.5vh;
     margin-right: 1.5vh;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+  
 }
 
 #topimagediv img
@@ -95,17 +93,10 @@ button
 
 #titleCanvas
 {
-    /* height: inherit; */
-    /* align-items: center; */
-    /* position: relative; */
-
-    
     top: 7vh;
     display: block;
     margin: 0px auto;
     justify-content: center;
-    /* padding-left:10vh; */
-    
     animation: animated_div 3s 1;
     animation-duration: 2s;
     animation-timing-function: ease;
@@ -122,9 +113,6 @@ button
 {
 0% {transform: rotate(0deg);left:0px;}
 25% {transform: rotate(20deg);left:0px;}
-/* 50% {transform: rotate(0deg);left:500px;} */
-/* 55% {transform: rotate(0deg);left:500px;}
-70% {transform: rotate(0deg);left:500px;} */
 100% {transform: rotate(-360deg);left:0px;}
 }
 
@@ -197,15 +185,10 @@ input
     text-align: center;
 }
 
-#orderButton
-{
-    background-color:rgb(197, 202, 194);
-}
 
 #thesvg
 {
     width: 50%;
-    /* height: 108px; */
 }
 
 #therectangle
@@ -272,7 +255,6 @@ input
     width: auto;
 
     margin: 1.5vh;
-    /* float:left; */
     background-color: bisque;
 }
 
@@ -309,16 +291,7 @@ input
     margin:1vh;
 }
 
-.buttons
-{
-    background-color:rgb(177, 202, 161);
-    border: 1px solid black;
-    font-size: 1rem;
-    border-radius: 5px;
-    color: bisque;
-    width: 10vw;
-    height: 5vh;
-} 
+
 
 #thefilters
 {
@@ -348,3 +321,36 @@ body
         height: 7vh;
     }
 }
+
+@keyframes profile_pic
+{
+    0% {
+        width: 200px;
+      }
+      100% {
+        width: 190px;
+      }
+}
+
+.profilediv :hover
+{
+    animation: profile_pic 3s 1;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: profile_pic;
+}
+.buttons
+{
+    background-color:rgb(177, 202, 161);
+    border: 1px solid black;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: bisque;
+    width: 10vw;
+    height: 5vh;
+} 
