@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css" />
+        <IfModule hidden mod_headers.c>
+            Header set Access-Control-Allow-Origin "*"
+        </IfModule>
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
     <title>yEAT</title>
 </head>
 <body>
@@ -21,8 +25,6 @@
         </div>
     </header>
     <div id="root"></div>
-    
-
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="restaurant.js"></script>
     <script type="text/javascript" src="restaurantList.js"></script>
@@ -46,17 +48,6 @@
  <script type="text/javascript" src="geolocation.js"></script>
  <div id="bottomimagediv">
     <img id = "pasta" src="media/pasta.jpg" alt>
-    <!-- <script>
-        var myimg = new Image()
-        var imgraster = document.getElementById("pasta")
-        myimg.data = imgraster
-        var rasterimg = new Raster(myimg);
-        window.alert(imgraster)
-        window.alert(rasterimg)
-        rasterimg.position = view.center;
-        rasterimg.scale(0.5);
-        rasterimg.rotate(45);
-    </script> -->
 </div>
     <footer>
         <script>
@@ -69,9 +60,9 @@
             }
             
             function drop(ev) {
-              ev.preventDefault();
-              var data = ev.dataTransfer.getData("text");
-              ev.target.appendChild(document.getElementById(data));
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
             }
         </script>
         <div id="drophere" ondrop="drop(event)" ondragover="allowDrop(event)">

@@ -30,7 +30,7 @@ function renderAbout(){
                   stop-opacity:0" />
                   <stop offset="100%" style="stop-color:rgb(132, 197, 91);stop-opacity:1" />
                 </radialGradient>
-              </defs>
+            </defs>
             <g id="circle">
                 <svg height="100" width="100">
                     <circle cx="50" cy="50" r="40" stroke="green" stroke-width="3" fill="url(#grad1)" />

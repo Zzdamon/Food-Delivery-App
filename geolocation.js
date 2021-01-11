@@ -6,8 +6,8 @@ function getLocation(map) {
            url: "https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/house-icon.png",
             // url:"https://cdn.iconscout.com/icon/free/png-256/motorcycle-delivery-2127501-1792684.png",
             scaledSize: new google.maps.Size(40,40),
-            origin: new google.maps.Point(0,0), // origin
-            anchor: new google.maps.Point(0, 0) // anchor
+            origin: new google.maps.Point(0,0),
+            anchor: new google.maps.Point(0, 0)
   
         }
         const markHome =new google.maps.Marker({
@@ -36,8 +36,8 @@ function getLocation(map) {
           //https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/house-icon.png
           url:"https://cdn.iconscout.com/icon/free/png-256/motorcycle-delivery-2127501-1792684.png",
           scaledSize: new google.maps.Size(50,50),
-          origin: new google.maps.Point(0,0), // origin
-          anchor: new google.maps.Point(0, 0) // anchor
+          origin: new google.maps.Point(0,0),
+          anchor: new google.maps.Point(0, 0)
 
       }
       let markRest= new google.maps.Marker({
