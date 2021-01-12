@@ -386,3 +386,16 @@ function increasevolume()
         myaudio.volume-=0.1
 
 }
+
+window.onload = () => {
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('sw.js')
+        .then((registration) => {
+            console.log("Service worker registered");
+            return registration;
+        })
+        .catch( (err) => {
+            console.error("Unable to register the service worker. ", err);
+        })
+    }
+}

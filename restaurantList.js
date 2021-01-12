@@ -19,11 +19,4 @@ APP.renderRestaurantList = (restaurantArray) => {
 		// il afisam in pagina web
 		rest.renderRestaurant();
 	});
-// 	restaurantList.innerHTML+=`
-// 	<div class=video>
-// 	<video id = "foodvideo" controls>
-// 	<source src="media/cooking.mp4" type="video/mp4">
-// </video>
-// </div>`
-
 }
